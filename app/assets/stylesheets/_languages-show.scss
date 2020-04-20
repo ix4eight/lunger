@@ -1,0 +1,20 @@
+.ls-contents{
+  background-color: #f7f7f7;
+  width: 100vw;
+  padding: 20px 0 20px 0;
+}
+.ls-content{
+  width: 700px;
+  height: 700px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 0 4px #eae6dc;
+  margin: auto;
+  &__title{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    text-shadow: 0 0 20px green;
+  }
+}

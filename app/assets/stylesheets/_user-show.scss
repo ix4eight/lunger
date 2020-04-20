@@ -1,0 +1,31 @@
+.us-contents{
+  background-color: #f7f7f7;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 40px;
+}
+.us-content{
+  background: #ffffff;
+  width: 700px;
+  border-radius: 16px;
+  box-shadow: 0 0 4px #eae6dc;
+  padding-bottom: 10px;
+  &__user{
+    text-align: center;
+    margin-top: 40px;
+    &--image{
+      background-color: gray;
+      width: 70px;
+      height: 70px;
+      margin: auto;
+      border-radius: 50px;
+      img{
+        margin-top:8px;
+      }
+    }
+    &--name{
+      font-size: 18px;
+    }
+  }
+}

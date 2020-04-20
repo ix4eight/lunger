@@ -1,0 +1,80 @@
+.c-contents{
+  background-color: #f7f7f7;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 20px;
+}
+.c-content{
+  width: 500px;
+  border-radius: 16px;
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0 0 4px #eae6dc;
+  &__box{
+  
+    &__title{
+      text-align: center;
+      color: #333333;
+      font-size: 22px;
+      font-weight: 600;
+      padding-bottom: 50px;
+      text-shadow: 0 0 10px green;
+    }
+    &__field{
+      padding-right: 30px;
+      margin-bottom: 50px;
+      text-shadow: 0 0 10px green;
+      &--name{
+        color: #333333;
+        font-size: 18px;
+        font-weight: 600;
+        padding-bottom: 10px;
+      }
+      input{
+        width: 100%;
+        height: 40px;
+        border: 1px solid #eae6dc;
+        border-radius: 8px;
+        padding: 12px;
+
+      }
+    }
+    &__area{
+      text-shadow: 0 0 10px green;
+      padding-right: 30px;
+      &--name{
+        color: #333333;
+        font-size: 18px;
+        font-weight: 600;
+        padding-bottom: 10px;
+      }
+      textarea{
+        width: 100%;
+        border: 1px solid #eae6dc;
+        border-radius: 8px;
+        padding: 12px;
+      }
+    }
+    &__btm{
+      input{
+        width:200px;
+        height:50px;
+        background-color: rgb(12, 146, 46);
+        margin: auto;
+        margin-top: 24px;
+        border-radius: 5px;
+        color: #ffffff;
+        line-height: 50px;
+        font-weight:bolder;
+        display: block;
+        cursor: pointer;
+      }
+      input:hover{
+        box-shadow: 0 10px 15px -5px rgba(0,0,0,.15),0 0 5px rgba(0,0,0,.1);
+        transform: translateY(-3px);
+        transition: 0.3s;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+= render "more/header"
+.c-contents
+  .c-content
+    = form_with(model: [@post, @comment]) do |form|
+      .c-content__box
+        .c-content__box__title
+          新規コメント投稿
+        .c-content__box__field
+          .c-content__box__field--name
+            タイトル
+          = form.text_field :title, :placeholder => '例)HTMLの記述間違いでは？'
+        .c-content__box__area
+          .c-content__box__area--name
+            コメント
+          = form.text_area :text, rows: "10", :placeholder => '例)link_toはaタグですよ！！'
+        .c-content__box__btm
+          = form.submit "投稿"
+= render "more/footer"

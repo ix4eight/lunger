@@ -1,4 +1,4 @@
-.logins{
+.signups{
   background-color: #f7f7f7;
   width: 100vw;
   height: 100vh;
@@ -6,21 +6,20 @@
   justify-content: center;
   align-items: center;
 }
-.login{
+.signup{
   width: 500px;
-  height: 600px;
+  height: 700px;
   border-radius: 16px;
   background: #ffffff;
   box-shadow: 0 0 4px #eae6dc;
-
   &__name{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 22px;
     font-weight: bold;
     padding: 40px 0 0 40px;
   }
   &__field{
-    padding: 40px 0 0 40px;
+    padding: 20px 0 0 20px;
     input{
       padding: 12px;
       margin-top: 8px;
@@ -30,7 +29,7 @@
     }
   }
   &__actions{
-    padding: 70px 0 0 40px;
+    padding: 20px 0 0 20px;
     padding-bottom: 30px;
     input{
       display: block;
@@ -45,8 +44,7 @@
     }
   }
   a{
-    padding-left: 40px;
+    padding-left: 20px;
     
   }
 }
-

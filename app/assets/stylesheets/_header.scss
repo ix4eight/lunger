@@ -1,0 +1,52 @@
+.headers{
+  background-color: #EEEEEE;
+  width: 100vw;
+  height: 100px;
+
+}
+.header0{
+  background-color: green;
+  width: 100vw;
+  height: 30px;
+
+  &__title{
+    padding: 6px 0;
+    font-size: 12px;
+    color: blanchedalmond;
+    padding-left: 20px;
+  }
+}
+.header{
+  background-color: #EEEEEE;
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 70px;
+
+  
+  &__left{
+    padding-left: 50px;
+
+    a{
+      color: black;
+      text-decoration: none;
+      font-size: 40px;
+      font-family: cursive;
+    }
+  }
+  &__right{
+    display: flex;
+    padding-right: 50px;
+    &__1{
+      padding-left: 30px;
+    }
+    a{
+      color: black;
+      text-decoration: none;
+      font-size: 20px;
+    
+    }
+  }
+
+}

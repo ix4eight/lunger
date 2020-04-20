@@ -1,0 +1,28 @@
+.d-contents{
+  background-color: #f7f7f7;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.d-content{
+  width: 700px;
+  height: 400px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 0 4px #eae6dc;
+  display: grid;
+  align-items: center;
+  
+  &__title{
+    text-align: center;
+    font-size: 30px;
+    p{
+      background: linear-gradient(transparent 70%, #13c581 70%);
+    }
+  }
+  &__link{
+    text-align: center;
+  }
+}
