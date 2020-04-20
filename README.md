@@ -1,24 +1,79 @@
-# README
+# Lunger
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 概要
+エンジニアがわからないところはエンジニアに聞くということで
+エンジニアが投稿した問題に対して他のエンジニアが答える
+インプットとアウトプットにもなるアプリ
+# 本番環境
 
-Things you may want to cover:
+# テストユーザー
+email: test@test.test
+password: test1234
 
-* Ruby version
+# 制作背景
+qiitaのようなものを使いやすく自分でアレンジしました。
 
-* System dependencies
+# 工夫したポイント
+言語ごとに投稿をわけてわかりやすくしました。
+投稿者とコメントのやりとりができます。
 
-* Configuration
+# 使用技術(開発環境)
+- Ruby 2.5.1
+- Rails 5.2.3
+- MySQL 5.6.43
+- Haml 5.1.2
+- Sass 3.7.4
+- jQuery 4.3.5
+- AWS
+  - EC2
+  - S3
+- Github
 
-* Database creation
+# DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false|
+### Association
+has_many :posts
+has_many :comments
 
-* Database initialization
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|text|text|null: false|
+|language_id|integer|null: false|
+|user_id|integer|null: false|
+### Association
+has_many :images
+has_many :comments
+belongs_to :user
+belongs_to :language
 
-* How to run the test suite
+## languagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+has_many :posts
 
-* Services (job queues, cache servers, search engines, etc.)
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|text|text|null: false|
+|user_id|integer|null: false|
+|post_id|integer|null: false|
+### Association
+belongs_to :user
+belongs_to :post
 
-* Deployment instructions
-
-* ...
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|src|string|null: false|
+|post_id|references||foreign_key: true|
+### Association
+belongs_to :post
