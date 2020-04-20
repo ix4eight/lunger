@@ -1,0 +1,35 @@
+= render "more/header"
+.n-contents
+  .n-content
+    = form_with model: @post, local: true do |form|
+      .n-content__new
+        新規投稿
+      .n-content__errors
+        - if @post.errors.any?
+          .n-content__error
+            %h2= "#{@post.errors.full_messages.count}件のエラーが発生しました。"
+            %ul
+              - @post.errors.full_messages.each do |message|
+                %li= message
+      .n-content__image
+        %p 写真
+      .image-box
+        = form.fields_for :images do |image|
+          .js-file_group{"data-index" => "#{image.index}"}
+            = image.file_field :src, class: 'js-file'
+            .js-remove 削除
+      .n-content__lang
+        %p 言語入力
+      .n-content__t-lang
+        = form.collection_select :language_id, Word.all, :id, :name
+      .n-content__title
+        %p タイトル入力
+      .n-content__t-title
+        = form.text_field :title, class: "f", :placeholder => "例)rubyとは？"
+      .n-content__text
+        %p テキスト入力
+      .n-content__t-text
+        = form.text_area :text, class: "f-1", :placeholder => "例)プログラミング言語です！！"
+      .n-content__btm
+        = form.submit "更新", class: 'f-b'
+= render "more/footer"

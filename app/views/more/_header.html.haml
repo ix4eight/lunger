@@ -1,0 +1,24 @@
+.headers
+  .header0
+    .header0__title
+      エンジニアが知恵を投稿し共有するサイトです
+  .header
+    .header__left
+      .header__left__title
+        = link_to root_path do
+          ReedIt
+    .header__right
+      - if user_signed_in?
+        .header__right__1
+          = link_to user_path(current_user.id) do
+            マイページ
+        .header__right__1
+          = link_to destroy_user_session_path, method: :delete do
+            ログアウト
+      - else
+        .header__right__1
+          = link_to new_user_session_path do
+            ログイン
+        .header__right__1
+          = link_to new_user_registration_path do
+            新規会員登録

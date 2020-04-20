@@ -1,0 +1,53 @@
+= render "more/header"
+.s-contents
+  .s-content
+    .s-content__user
+      .s-content__user--name
+        = link_to "#" do
+          = @post.user.name
+      .s-content__user--time
+        = @post.created_at.strftime("%Y.%m.%d %H:%M")
+      .s-content__user--lang
+        = @post.language.name
+    .s-content__image
+      - @post.images.each do |image|
+        = image_tag image.src.url,size:"600x400"
+    .s-content__title
+      = @post.title
+    .s-content__text
+      = @post.text
+    .comment
+      .comment__title
+        .comment__title__name
+          コメント
+        .comment__title__post
+          - if user_signed_in?
+            .comment__title__post__btm
+              = link_to new_post_comment_path(@post.id) do
+                投稿する
+          - else
+            .comment__title__post__btm
+              = link_to new_user_session_path do
+                投稿する
+      .comment__box
+        - @comments.each do |comment|
+          .comment__box__string
+            .comment__box__string--imag
+              = image_tag "user.png",size: "30x30",class:"iimage"
+            .comment__box__string--info
+              .c-title
+                = comment.title
+              .c-text
+                = comment.text
+              .c-date
+                = comment.created_at.strftime("%Y.%m.%d %H:%M")
+    .s-content__box
+      - if user_signed_in? && current_user.id == @post.user_id
+        .s-content__box--btn
+          = link_to edit_post_path(@post.id) do
+            %button.btn
+              編集する
+          = link_to post_path(@post.id), method: :delete do
+            %button.btn
+              削除する
+= render "more/footer"

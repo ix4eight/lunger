@@ -1,0 +1,147 @@
+= render "more/header"
+.t-content
+  = image_tag "top.jpeg",width:"100%",height:"400px",class:"top-imag"
+  .t-content__box
+    .t-content__box__title
+      %a ReedIt
+    .t-content__box__text
+      %a 知恵を投稿して他のエンジニアと共有しよう
+    - if user_signed_in?
+      .t-content__box__btm
+        = link_to new_post_path do
+          投稿する
+    - else
+      .t-content__box__btm
+        = link_to new_user_session_path do
+          投稿する
+.t-wrapper
+  .t-content1
+    .t-content1__title
+      %a #知識一覧
+    .t-content1__box
+      .t-content1__box__lists
+        マークアップ言語
+        .t-content1__box__lists--list
+          = link_to language_path(1) do
+            HTML
+        .t-content1__box__lists--list
+          = link_to language_path(2) do
+            CSS
+      .t-content1__box__lists
+        プログラミング言語
+        .t-content1__box__lists--list
+          = link_to language_path(3) do
+            Ruby
+        .t-content1__box__lists--list
+          = link_to language_path(4) do
+            Java
+        .t-content1__box__lists--list
+          = link_to language_path(5) do
+            PHP
+        .t-content1__box__lists--list
+          = link_to language_path(6) do
+            Python
+        .t-content1__box__lists--list
+          = link_to language_path(7) do
+            SQL
+        .t-content1__box__lists--list
+          = link_to language_path(8) do
+            C
+        .t-content1__box__lists--list
+          = link_to language_path(9) do
+            C#
+        .t-content1__box__lists--list
+          = link_to language_path(10) do
+            C++
+      .t-content1__box__lists
+        フレームワーク
+        .t-content1__box__lists--list
+          = link_to language_path(11) do
+            Ruby on Rails
+        .t-content1__box__lists--list
+          = link_to language_path(12) do
+            Spring
+        .t-content1__box__lists--list
+          = link_to language_path(13) do
+            CakePHP
+        .t-content1__box__lists--list
+          = link_to language_path(14) do
+            AngularJS
+        .t-content1__box__lists--list
+          = link_to language_path(15) do
+            Django
+        .t-content1__box__lists--list
+          = link_to language_path(16) do
+            Bootstrap
+      .t-content1__box__lists
+        その他
+        .t-content1__box__lists--list
+          = link_to language_path(17) do
+            AWS
+        .t-content1__box__lists--list
+          = link_to language_path(18) do
+            Git GitHub
+        .t-content1__box__lists--list
+          = link_to language_path(19) do
+            MySQL
+  .t-content2
+    .t-content2__title
+      %a #新着
+    - @posts.each do |post|
+      .t-content2__box
+        .t-content2__box__user
+          .t-content2__box__user--image
+            = image_tag post.images.first.src.url, size:"50x50"
+          .t-content2__box__user--name
+            = post.user.name
+          .t-content2__box__user--comment
+            .c-comment
+              %i.fa.fa-comment-dots
+            .c-comment-count
+              = post.comments.count
+        .t-content2__box__string
+          .t-content2__box__string--lang
+            - if post.language_id == 1
+              HTML
+            - elsif post.language_id == 2
+              CSS
+            - elsif post.language_id == 3
+              Ruby
+            - elsif post.language_id == 4
+              Java
+            - elsif post.language_id == 5
+              PHP
+            - elsif post.language_id == 6
+              Python
+            - elsif post.language_id == 7
+              SQL
+            - elsif post.language_id == 8
+              C
+            - elsif post.language_id == 9
+              C#
+            - elsif post.language_id == 10
+              C++
+            - elsif post.language_id == 11
+              Ruby on Rails
+            - elsif post.language_id == 12
+              Spring
+            - elsif post.language_id == 13
+              CakePHP
+            - elsif post.language_id == 14
+              AngularJS
+            - elsif post.language_id == 15
+              DJango
+            - elsif post.language_id == 16
+              Bootstrap
+            - elsif post.language_id == 17
+              AWS
+            - elsif post.language_id == 18
+              Git GitHub
+            - elsif post.language_id == 19
+              MySQL
+          .t-content2__box__string--title
+            = link_to post_path(post.id) do
+              = post.title
+          .t-content2__box__string--text
+            = post.text
+= render "more/footer"

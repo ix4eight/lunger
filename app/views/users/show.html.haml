@@ -1,0 +1,22 @@
+= render "more/header"
+.us-contents
+  .us-content
+    .us-content__user
+      .us-content__user--image
+        = image_tag "user.png", size:"50x50",crass:"u-img"
+      .us-content__user--name
+        = current_user.name
+    - @posts.each do |post|
+      .t-content2__box
+        .t-content2__box__user
+          .t-content2__box__user--image
+            = image_tag post.images.first.src.url, size:"50x50"
+          .t-content2__box__user--name
+            = post.user.name
+        .t-content2__box__string
+          .t-content2__box__string--title
+            = link_to post_path(post.id) do
+              = post.title
+          .t-content2__box__string--text
+            = post.text
+= render "more/footer"

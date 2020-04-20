@@ -1,0 +1,20 @@
+= render "more/header"
+.ls-contents
+  .ls-content
+    .ls-content__title
+      = @name
+      の投稿一覧
+    - @posts.each do |post|
+      .t-content2__box
+        .t-content2__box__user
+          .t-content2__box__user--image
+            = image_tag post.images.first.src.url, size:"50x50"
+          .t-content2__box__user--name
+            = post.user.name
+        .t-content2__box__string
+          .t-content2__box__string--title
+            = link_to post_path(post.id) do
+              = post.title
+          .t-content2__box__string--text
+            = post.text
+= render "more/footer"
