@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: lunger_production
-  username: lunger
-  password: <%= ENV['LUNGER_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
