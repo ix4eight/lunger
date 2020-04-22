@@ -1,10 +1,14 @@
-# Lunger
-
+# Lunger 
+<br>
+  <img src="https://i.gyazo.com/fc1f7bd7fb7a5cd270c5a19c333497a3.jpg" width="600x600"><br>
+  
 # 概要
 エンジニアがわからないところはエンジニアに聞くということで
 エンジニアが投稿した問題に対して他のエンジニアが答える
 インプットとアウトプットにもなるアプリ
+
 # 本番環境
+http://18.180.66.99/
 
 # テストユーザー
 email: test@test.test
