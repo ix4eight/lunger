@@ -13,6 +13,11 @@
             = image_tag post.images.first.src.url, size:"50x50"
           .t-content2__box__user--name
             = post.user.name
+          .t-content2__box__user--comment
+            .c-comment
+              %i.fa.fa-comment-dots
+            .c-comment-count
+              = post.comments.count
         .t-content2__box__string
           .t-content2__box__string--title
             = link_to post_path(post.id) do

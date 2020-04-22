@@ -13,11 +13,12 @@
                 %li= message
       .n-content__image
         %p 写真
-      .image-box
-        = form.fields_for :images do |image|
-          .js-file_group{"data-index" => "#{image.index}"}
-            = image.file_field :src, class: 'js-file'
-            .js-remove 削除
+      #previews
+        #image-box
+          = form.fields_for :images do |image|
+            .js-file_group{"data-index" => "#{image.index}"}
+              = image.file_field :src, class: 'js-file'
+              .js-remove 削除
       .n-content__lang
         %p 言語入力
       .n-content__t-lang
